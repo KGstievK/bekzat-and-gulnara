@@ -47,6 +47,7 @@ const HappyEnd = () => {
     const intervalId = setInterval(updateTimer, 1000);
     return () => clearInterval(intervalId);
   }, []);
+  
   return (
     <section className={scss.HappyEnd}>
       <div className="container">
@@ -60,8 +61,8 @@ const HappyEnd = () => {
           />
           <div className={scss.ourDay}>
           <h1 className={playfair_display.className}>
-            "Место для счастья - здесь,
-            <br /> время для счастья - сейчас"
+            Место для счастья - здесь,
+            <br /> время для счастья - сейчас
           </h1>
             <div className={scss.time}>
               <h2 className={oswald.className}>
