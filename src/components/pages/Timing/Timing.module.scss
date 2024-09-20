@@ -1,0 +1,49 @@
+.Timing {
+  margin: 50px 0;
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    h1 {
+      font-size: clamp(30px, 5vw, 64px);
+      font-weight: 550;
+    }
+    .timing_cart {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      margin-top: 50px;
+      img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 200px;
+        height: 200px;
+        border: 3px solid #000;
+        border-radius: 100%;
+        object-fit: cover;
+        filter: grayscale(10);
+      }
+      h2 {
+        font-size: clamp(16px, 5vw, 34px);
+        font-weight: 550;
+        margin-top: 25px;
+      }
+      p {
+        text-align: center;
+      }
+    }
+    .Points{
+      width: 10px;
+      height: 10px;
+      background-color: #000;
+      border-radius: 100%;
+      margin-top: 20px;
+      &:nth-child(3) {
+        margin-top: 50px;
+      }
+    }
+  }
+}

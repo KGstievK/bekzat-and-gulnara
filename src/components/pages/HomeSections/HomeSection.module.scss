@@ -1,0 +1,45 @@
+.HomeSection {
+  .content {
+    // .back {
+    //   position: absolute;
+    //   z-index: 0;
+    //   max-width: 700px;
+    //   width: 100%;
+    //   bottom: -150px;
+    //   max-height: 1100px;
+    //   height: 120vw;
+    //   @media (max-width: 631px) {
+    //     height: 757px;
+    //   }
+    // }
+    .home_bg {
+      position: relative;
+      padding: 25px;
+      max-width: 700px;
+      width: 100%;
+      height: 100vh; // Задаем высоту контейнера
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      margin: 0 auto;
+      
+      
+      h1 {
+        font-size: clamp(45px, 5vw, 84px);
+
+        color: #fff;
+        font-weight: 300;
+        z-index: 1;
+      }
+
+      p {
+        position: absolute;
+        bottom: 35px;
+        color: #fff;
+        font-size: clamp(20px, 3vw, 34px);
+        z-index: 1;
+      }
+    }
+  }
+}
