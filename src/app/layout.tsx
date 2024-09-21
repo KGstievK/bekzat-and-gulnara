@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Приглашение на Свадьбу",
     description: "Бекзат Гулнара",
-    // url: "https://yourwebsite.com", // Замените на фактический URL
+    url: "https://bekzat-and-gulnara.vercel.app/",
     type: "website",
     images: [
       {
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     description: "Бекзат Гулнара",
     images: [
       {
-        url: "/public/Logo.svg", // Замените на путь к вашему изображению
+        url: "/public/Logo.svg",
         alt: "Приглашение на Свадьбу",
       },
     ],

@@ -29,7 +29,6 @@ const Timer: React.FC = () => {
             <p className={montserrat.className}>
             Урматтуу биздин коноктор! Сиздерди үйлөнүү үлпөт тоюбузга арналган салтанатка, кадырлуу коногубуз болуп кетүүгө чакырабыз
             </p>
-            <p className={montserrat.className}>Саат 17:00</p>
             <h1 className={playfairDisplay.className}>
               Той ээси: Бакыта
             </h1>
@@ -44,9 +43,6 @@ const Timer: React.FC = () => {
           <div className={scss.ourDay}>
             <p className={montserrat.className}>
               Совсем скоро, в жизни двух любящих людей произойдет одно из самых важных событий, свидетелями которого мы просим вас быть и разделить радость этого дня вместе с нами.
-            </p>
-            <p className={montserrat.className}>
-              В 17:00
             </p>
             <p className={montserrat.className}>
               Будем рады пригласить вас стать почётными гостями торжества, посвящённого бракосочетания
