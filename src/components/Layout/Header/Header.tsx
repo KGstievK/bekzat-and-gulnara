@@ -11,7 +11,7 @@ const Header = () => {
           <div className={scss.modalOverlay}>
             <div className={scss.modalContent}>
               <audio controls>
-                <source src="/audio/05-EdSheeran-Perfect.mp3" type="audio/mpeg" />
+                <source src="audio/05-EdSheeran-Perfect.mp3" type="audio/mpeg" />
               </audio>
             </div>
           </div>{" "}
