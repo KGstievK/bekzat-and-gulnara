@@ -3,7 +3,7 @@ import scss from "./Header.module.scss";
 
 const Header = () => {
   const [isPlaying, setIsPlaying] = useState(true); // Состояние воспроизведения
-  const audioRef = useRef<HTMLAudioElement>(null);  // Ссылка на аудио элемент
+  const audioRef = useRef<HTMLAudioElement>(null); // Ссылка на аудио элемент
 
   // Эффект для автозапуска аудио при загрузке сайта
   useEffect(() => {
@@ -20,9 +20,9 @@ const Header = () => {
       if (isPlaying) {
         audioRef.current.pause(); // Остановка
       } else {
-        audioRef.current.play();  // Воспроизведение
+        audioRef.current.play(); // Воспроизведение
       }
-      setIsPlaying(!isPlaying);  // Обновление состояния
+      setIsPlaying(!isPlaying); // Обновление состояния
     }
   };
 
@@ -33,12 +33,12 @@ const Header = () => {
           <div className={scss.modalOverlay}>
             <div className={scss.modalContent}>
               <audio ref={audioRef} controls>
-                <source src="/audio/05-EdSheeran-Perfect.mp3" type="audio/mpeg" />
+                <source
+                  src="/audio/05-EdSheeran-Perfect.mp3"
+                  type="audio/mpeg"
+                />
                 Ваш браузер не поддерживает элемент аудио.
               </audio>
-              <button onClick={togglePlay}>
-                {isPlaying ? "Остановить" : "Воспроизвести"}
-              </button>
             </div>
           </div>
         </div>
