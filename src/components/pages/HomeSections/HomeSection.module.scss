@@ -30,6 +30,9 @@
         color: #fff;
         font-weight: 300;
         z-index: 1;
+        text-shadow: 
+        0 2px 2px #555,
+        0 0 5px #eee;
       }
 
       p {
@@ -37,7 +40,10 @@
         bottom: 45px;
         color: #fff;
         font-size: clamp(28px, 3vw, 34px);
-        z-index: 1;
+        z-index: 2;
+        text-shadow: 
+          0 2px 2px #555,
+          0 0 5px #eee;
       }
     }
   }
