@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { Oswald, Playfair_Display } from "next/font/google";
 import Image from "next/image";
 import footer from "@/assets/footer.jpg";
+import init from "@/assets/init.svg";
+import init2 from "@/assets/init2.svg";
 
 interface TimeLeft {
   days: number;
@@ -83,6 +85,11 @@ const HappyEnd = () => {
                 {timeLeft.seconds}{" "}
                 <span className={playfair_display.className}>СЕКУНДА</span>
               </h2>
+            </div>
+            <div className={scss.inithial}>
+              <Image className={scss.inits} src={init} alt="инициалы"/>
+              <div className={scss.line}></div>
+              <Image className={scss.inits} src={init2} alt="инициалы"/>
             </div>
           </div>
         </div>

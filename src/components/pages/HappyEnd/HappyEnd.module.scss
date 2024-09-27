@@ -76,6 +76,27 @@
           }
         }
       }
+      .inithial {
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+        gap: 25px;
+        .inits {
+          filter: drop-shadow(0 2px 2px #555);
+        }
+        .line {
+          width: 4px;
+          height: 100%;
+          background-color: #fff;
+          border-radius: 20px;
+          box-shadow: 
+            0 2px 2px #555, 
+            0 0 5px #eee;
+        }
+      }
     }
   }
 }
