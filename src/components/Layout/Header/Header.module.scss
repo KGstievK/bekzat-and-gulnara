@@ -6,7 +6,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
+    color: #FFF;
     .logo {
       display: flex;
       justify-content: center;
@@ -36,6 +36,13 @@
   border-radius: 10px;
   text-align: center;
   position: relative;
+  p {
+    font-size: 12px;
+    font-weight: 300;
+    text-shadow: 
+      0 2px 2px #555,
+      0 0 5px #eee;
+  }
 }
 
 .closeButton {
