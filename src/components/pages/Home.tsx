@@ -1,3 +1,4 @@
+import { useState } from "react"
 import Dad from "./Dad/Dad"
 import FormGuest from "./FormGuest/FormGuest"
 import Gps from "./Gps/Gps"
@@ -8,6 +9,7 @@ import Timer from "./Timer/Timer"
 import Timing from "./Timing/Timing"
 
 const Home = () => {
+
   return (
     <div>
       <HomeSection/>

@@ -1,4 +1,5 @@
 'use client';
+import LayoutSide from '@/components/Layout/LayoutSide';
 import ReduxProvider from '@/providers/ReduxProvider';
 import { SessionProvider } from '@/providers/SessionProvider';
 import React, { FC, ReactNode } from 'react';
@@ -11,7 +12,7 @@ const RootLayoutClient: FC<RootLayoutClientProps> = ({ children }) => {
 	return (
 		<>
 			<ReduxProvider>
-				<SessionProvider>{children}</SessionProvider>
+				<LayoutSide>{children}</LayoutSide>
 			</ReduxProvider>
 		</>
 	);
