@@ -14,7 +14,7 @@ const Header = () => {
                 <source src="/public/audio/05-EdSheeran-Perfect.mp3" type="audio/mpeg" />
               </audio>
             </div>
-          </div>{" "}
+          </div>
         </div>
       </div>
     </header>
