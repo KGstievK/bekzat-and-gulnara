@@ -81,7 +81,9 @@ console.log(star);
     <section className={scss.FormGuest}>
       <div className={scss.content}>
         <h1>СПАСИБО ЧТО ЗАПОЛНИЛИ АНКЕТУ</h1>
-        <p>{user?.name} И {user?.partner}</p>
+        <p style={{
+          borderBottom: "2px solid #000"
+        }}>{user?.name?.toUpperCase()} {user?.partner && user?.name !== undefined ? <span>И</span> : null } {user?.partner?.toUpperCase()} </p>
       </div>
     </section>
     )
