@@ -7,18 +7,18 @@ const Header = () => {
 
   useEffect(() => {
     const handleUserInteraction = () => {
-      // if (audioRef.current) {
-      //   audioRef.current.volume = 0.2; // Установка громкости
-      //   audioRef.current.play().catch((error) => {
-      //     console.log("Не удалось воспроизвести аудио:", error);
-      //   });
-      // }
+      if (audioRef.current) {
+        audioRef.current.volume = 0.2; // Установка громкости
+        audioRef.current.play().catch((error) => {
+          console.log("Не удалось воспроизвести аудио:", error);
+        });
+      }
       // Удаляем обработчик после первого клика
-      // document.removeEventListener("click", handleUserInteraction);
+      document.removeEventListener("click", handleUserInteraction);
     };
 
     // Добавляем обработчик события клика на документ
-    // document.addEventListener("click", handleUserInteraction);
+    document.addEventListener("click", handleUserInteraction);
 
     // Убираем обработчик при размонтировании компонента
     return () => {
