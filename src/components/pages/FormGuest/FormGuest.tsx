@@ -26,7 +26,6 @@ const FormGuest = () => {
       setUser(JSON.parse(String(localStorage.getItem("name"))));
     }
   }, []);
-
   const onSubmit: SubmitHandler<FormType> = async (FormData) => {
     try {
       const nameData = {
