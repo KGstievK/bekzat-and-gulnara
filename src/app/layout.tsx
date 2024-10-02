@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.scss";
-import RootLayoutClient from "./layout.client";
+import LayoutSide from "@/components/Layout/LayoutSide";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,17 +22,6 @@ export const metadata: Metadata = {
       },
     ],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Приглашение на Свадьбу",
-    description: "Бекзат Гулнара",
-    images: [
-      {
-        url: "/public/Logo.svg",
-        alt: "Приглашение на Свадьбу",
-      },
-    ],
-  },
 };
 
 export default function RootLayout({
@@ -43,7 +32,7 @@ export default function RootLayout({
   return (
     <html>
       <body className={inter.className}>
-        <RootLayoutClient>{children}</RootLayoutClient>
+        <LayoutSide>{children}</LayoutSide>
       </body>
     </html>
   );

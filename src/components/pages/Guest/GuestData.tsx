@@ -23,7 +23,7 @@ const GuestData: FC = () => {
 
   const onSubmitEdit: SubmitHandler<guestType> = async (data) => {
     try {
-      const { data: responseTodos } = await axios.patch(`${url}/Bekzat-and-Gulnara${editId}`, data);
+      const { data: responseTodos } = await axios.patch(`${url}/Bekzat-and-Gulnara/${editId}`, data);
       setGuests(responseTodos);
       setEditId(null);
     } catch (e) {
@@ -35,12 +35,12 @@ const GuestData: FC = () => {
     const updateData = {
       isCompleted: !isCompleted,
     };
-    const { data } = await axios.patch(`${url}/Bekzat-and-Gulnara${_id}`, updateData);
+    const { data } = await axios.patch(`${url}/Bekzat-and-Gulnara/${_id}`, updateData);
     setGuests(data);
   };
 
-  const deleteTodo = async (_id: number) => {
-    const { data } = await axios.delete(`${url}/Bekzat-and-Gulnara${_id}`);
+  const deleteTodo = async (id: number) => {
+    const { data } = await axios.delete(`${url}/Bekzat-and-Gulnara/${id}`);
     setGuests(data);
   };
 

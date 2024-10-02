@@ -16,11 +16,9 @@ const CHAT_ID = process.env.NEXT_PUBLIC_TELEGRAM_CHAT_ID;
 const url = process.env.NEXT_PUBLIC_API_URL;
 
 const FormGuest = () => {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState<boolean>(false);
   const [user, setUser] = useState<FormType | null>(null);
-  const [star, setStar] = useState<FormType | null>(null);
-  const { register, handleSubmit } = useForm<FormType>({});
-console.log(star);
+  const { register, handleSubmit } = useForm<FormType>();
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -41,36 +39,48 @@ console.log(star);
         partner: FormData.partner,
         dev: FormData.dev,
       };
+
       const { data: responseName } = await axios.post(`${url}/Bekzat-and-Gulnara`, nameData, {
         headers: {
           Accept: "application/json, text/plain, */*",
           "Content-Type": "application/json",
         },
       });
+
       const { data: responsePartner } = await axios.post(`${url}/Bekzat-and-Gulnara`, partnerData, {
         headers: {
           Accept: "application/json, text/plain, */*",
           "Content-Type": "application/json",
         },
       });
+      console.log(responseName);
       console.log(responsePartner);
       
+      localStorage.setItem("name", JSON.stringify(FormData));
+      localStorage.setItem("show", JSON.stringify(true));
+      window.location.reload();
+
+      // Отправка сообщения в Telegram
       const messageModel = (FormData: FormType) => {
         let messageTG = `КИМ: <b>${FormData.name}</b>\n`;
         messageTG += `ЖААРЫ: <b>${FormData.partner}</b>\n`;
         messageTG += `ТАКТОО: <b>${FormData.dev}</b>\n`;
         return messageTG;
       };
+
       const message = messageModel(FormData);
       await axios.post(`https://api.telegram.org/bot${TOKEN}/sendMessage`, {
         chat_id: CHAT_ID,
         parse_mode: "html",
         text: message,
       });
-      localStorage.setItem("name", JSON.stringify(FormData));
-      localStorage.setItem("show", JSON.stringify(true));
-      window.location.reload();
-      setStar(responseName);
+
+      // Сохраняем данные в localStorage
+      
+      // Обновляем состояние без перезагрузки страницы
+      setShow(true);
+      setUser(FormData);
+
     } catch (e) {
       console.error(e);
     }
@@ -78,15 +88,15 @@ console.log(star);
 
   if (show) {
     return (
-    <section className={scss.FormGuest}>
-      <div className={scss.content}>
-        <h1>СПАСИБО ЧТО ЗАПОЛНИЛИ АНКЕТУ</h1>
-        <p style={{
-          borderBottom: "2px solid #000"
-        }}>{user?.name?.toUpperCase()} {user?.partner && user?.name !== undefined ? <span>И</span> : null } {user?.partner?.toUpperCase()} </p>
-      </div>
-    </section>
-    )
+      <section className={scss.FormGuest}>
+        <div className={scss.content}>
+          <h1>СПАСИБО ЧТО ЗАПОЛНИЛИ АНКЕТУ</h1>
+          <p style={{ borderBottom: "2px solid #000" }}>
+            {user?.name?.toUpperCase()} {user?.partner && user?.name ? <span>И</span> : null} {user?.partner?.toUpperCase()}
+          </p>
+        </div>
+      </section>
+    );
   }
 
   return (
@@ -95,7 +105,7 @@ console.log(star);
         <div className={scss.content}>
           <h1>АНКЕТА ГОСТЯ</h1>
           <p>Просьба подтвердить присутствие до 8 октября</p>
-          <form action="" onSubmit={handleSubmit(onSubmit)}>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <input
               type="text"
               placeholder="Ваша Имя и Фамилия"
@@ -104,8 +114,8 @@ console.log(star);
             <input
               type="text"
               placeholder="Имя и Фамилия вашей спутницы"
-              {...register("partner", { required: false })}
-            />  
+              {...register("partner")}
+            />
             <p>Планируете ли вы присутствовать на свадьбе?</p>
             <div className={scss.radio}>
               <input

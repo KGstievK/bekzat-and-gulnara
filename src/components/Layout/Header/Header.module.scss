@@ -2,6 +2,8 @@
   padding-block: 14px;
   position: fixed;
   z-index: 2;
+  background-color: transparent;
+
   .content {
     display: flex;
     align-items: center;
@@ -21,17 +23,12 @@
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
-  // background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  z-index: 1000;
-  box-shadow: 0 2px 2px #555;
 }
 
 .modalContent {
-  background-color: transparent;
   padding: 20px;
   border-radius: 10px;
   text-align: center;
